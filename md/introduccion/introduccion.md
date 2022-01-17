@@ -8,7 +8,11 @@ La principal motivación a la hora de desarrollar este sistema es encontrar la m
 
 ## Objetivos
 
-Se pretende que el sistema pueda realizar las siguientes tareas:
+El desarrollo de este proyecto tiene los siguientes objetivos:
 
-- Creación de bots de Discord.
-- Almacenamiento de la configuración de estos bots.
+-   Ofrecer una solución que permita facilitar y unificar la creación de bots de Discord.
+-   Ofrecer una solución que permita facilitar el despliegue de bots de Discord.
+-   Ofrecer una solución que permita facilitar la creación de comandos de bots de Discord.
+-   Ofrecer una solución que provea una de API REST para permitir el desarrollo de distintos frontend y la integración de estos.
+-   Ofrecer una solución totalmente compuesta por software libre.
+-   Ofrecer una solución liviana y no intrusiva en el ecosistema donde se instale.
