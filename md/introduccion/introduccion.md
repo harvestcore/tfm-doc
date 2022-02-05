@@ -23,9 +23,9 @@ Es por tanto, un software pensado para usuarios mas avanzados, ya que los usuari
 
 El desarrollo de este proyecto tiene los siguientes objetivos:
 
--   Ofrecer una solución que permita facilitar y unificar la creación de bots de Discord.
--   Ofrecer una solución que permita facilitar el despliegue de bots de Discord.
--   Ofrecer una solución que permita facilitar la creación de comandos de bots de Discord.
--   Ofrecer una solución que provea una de API REST para permitir el desarrollo de distintos frontend y la integración de estos.
--   Ofrecer una solución totalmente compuesta por software libre.
--   Ofrecer una solución liviana y no intrusiva en el ecosistema donde se instale.
+- Diseñar y programar un sistema compuesto por un frontend, un backend, y una serie de workers que permitan la creación, administración y despliegue de bots de Discord.
+- La herramienta permitirá configurar una serie de comandos que facilitan las tareas de administración de sistemas, tales como monitorización, alertas, o tareas en segundo plano.
+- Se publicará todo el software creado bajo licencia de software libre.
+- El software creado estará disponible en contenedores Docker para facilitar su despliegue y distribución.
+- El backend proveerá una API REST que permitirá el desarrollo de distintos frontend y la integración de estos.
+- El sistema reducirá el tiempo necesario para crear y desplegar un bot de Discord al menos un 50%.
