@@ -4,26 +4,34 @@ Buscador: [discord.bots.gg](https://discord.bots.gg/)
 
 Por lo general los bots son de moderación.
 
-### [Autocode](https://autocode.com/)
+## [Autocode](https://autocode.com/)
 
--   Requiere bastante código.
--   Algo complejo.
--   Comandos custom.
--   No se tiene control del despliegue del bot.
--   La personalización extra requiere de premium.
+- Requiere bastante código.
+- Algo complejo.
+- Comandos custom.
+- No se tiene control del despliegue del bot.
+- La personalización extra requiere de premium.
 
-### [ProBot](https://probot.io/)
+## [ProBot](https://probot.io/)
 
--   Comandos predefinidos.
--   No se tiene control del despliegue del bot.
--   Mismo bot con distintas configuraciones para cada servidor.
--   No se pueden crear distintos bots.
--   La personalización extra requiere de premium.
+- Comandos predefinidos.
+- No se tiene control del despliegue del bot.
+- Mismo bot con distintas configuraciones para cada servidor.
+- No se pueden crear distintos bots.
+- La personalización extra requiere de premium.
 
-### [Mee6](https://mee6.xyz/)
+## [Mee6](https://mee6.xyz/)
 
--   Comandos predefinidos.
--   No se tiene control del despliegue del bot.
--   Mismo bot con distintas configuraciones para cada servidor.
--   No se pueden crear distintos bots.
--   La personalización extra requiere de premium.
+- Comandos predefinidos.
+- No se tiene control del despliegue del bot.
+- Mismo bot con distintas configuraciones para cada servidor.
+- No se pueden crear distintos bots.
+- La personalización extra requiere de premium.
+
+## [BotGhost](https://botghost.com/)
+
+- Comandos predefinidos.
+- No se tiene control del despliegue del bot.
+- No se pueden crear distintos bots.
+- Los bots son independientes unos de otros.
+- La personalización extra y la posibilidad de crear varios bots requiere de premium.
