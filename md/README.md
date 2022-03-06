@@ -6,7 +6,7 @@ Creación de un sistema para la gestión y despliegue de bots de Discord.
 
 2. [Análisis](analisis/analisis.md)
 
-3. [Diseño - Arquitectura](analisis/arquitectura.md)
+3. [Diseño - Arquitectura](diseño/arquitectura.md)
 
 4. [Estado del arte](estado-del-arte/estado-del-arte.md)
 
