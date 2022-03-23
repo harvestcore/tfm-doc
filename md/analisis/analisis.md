@@ -3,7 +3,7 @@
 ## Descripción de actores
 
 - **Administrador**: Crea los bots y los comandos. Tiene poder de configuración y de despliegue. Puede ser también usuario del bot. Agrega los bots a los servidores de Discord.
-- **Usuario de Discord**: No realiza ningún tipo de configuración de los bots, comandos o bots. Interactúa con los bots una vez ya han sido configurados y desplegados por un usuario administrador. Hace uso de los comandos configurados en el bot.
+- **Usuario de Discord**: No realiza ningún tipo de configuración de los bots o comandos. Interactúa con los bots una vez ya han sido configurados y desplegados por un usuario administrador. Hace uso de los comandos configurados en el bot.
 
 ## Requisitos del sistema
 
@@ -86,7 +86,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 
 ---
 
-**Crear un bot**
+### Crear un bot
 
 | Sección                | Contenido                                                    |
 | ---------------------- | ------------------------------------------------------------ |
@@ -100,7 +100,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | Tareas de seguimiento  | –                                                            |
 | Criterio de aceptación | - Los bots se pueden crear correctamente.<br />- El usuario es avisado en caso de error al crear un bot.<br />- Tests unitarios y integración son creados dentro de lo posible. |
 
-**Consultar datos de un bot**
+### Consultar datos de un bot
 
 | Sección                | Contenido                                                    |
 | ---------------------- | ------------------------------------------------------------ |
@@ -114,7 +114,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | Tareas de seguimiento  | –                                                            |
 | Criterio de aceptación | - Todos los datos de los bots son devueltos.<br />- El usuario es avisado en caso de error al obtener los detalles de los bots.<br />- Tests unitarios y integración son creados dentro de lo posible. |
 
-**Editar un bot**
+### Editar un bot
 
 | Sección                | Contenido                                                    |
 | ---------------------- | ------------------------------------------------------------ |
@@ -128,7 +128,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | Tareas de seguimiento  | –                                                            |
 | Criterio de aceptación | - El bot es modificado correctamente.<br />- El usuario es avisado en caso de error al modificar los datos del bot.<br />- Tests unitarios y integración son creados dentro de lo posible. |
 
-**Eliminar un bot**
+### Eliminar un bot
 
 | Sección                | Contenido                                                    |
 | ---------------------- | ------------------------------------------------------------ |
@@ -142,7 +142,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | Tareas de seguimiento  | –                                                            |
 | Criterio de aceptación | - El bot es eliminado correctamente.<br />- El usuario es avisado en caso de error al eliminar los datos del bot.<br />- Tests unitarios y integración son creados dentro de lo posible. |
 
-**Crear un comando**
+### Crear un comando
 
 | Sección                | Contenido                                                    |
 | ---------------------- | ------------------------------------------------------------ |
@@ -156,7 +156,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | Tareas de seguimiento  | –                                                            |
 | Criterio de aceptación | - Los comandos se crean correctamente.<br />- El usuario es avisado en caso de error al crear un comando.<br />- Tests unitarios y integración son creados dentro de lo posible. |
 
-**Consultar datos de un comando**
+### Consultar datos de un comando
 
 | Sección                | Contenido                                                    |
 | ---------------------- | ------------------------------------------------------------ |
@@ -170,7 +170,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | Tareas de seguimiento  | –                                                            |
 | Criterio de aceptación | - Todos los datos de los comandos son devueltos.<br />- El usuario es avisado en caso de error al obtener los detalles de los comandos.<br />- Tests unitarios y integración son creados dentro de lo posible. |
 
-**Editar un comando**
+### Editar un comando
 
 | Sección                | Contenido                                                    |
 | ---------------------- | ------------------------------------------------------------ |
@@ -184,7 +184,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | Tareas de seguimiento  | –                                                            |
 | Criterio de aceptación | - El comando es modificado correctamente.<br />- El usuario es avisado en caso de error al modificar los datos del comando.<br />- Tests unitarios y integración son creados dentro de lo posible. |
 
-**Eliminar un comando**
+### Eliminar un comando
 
 | Sección                | Contenido                                                    |
 | ---------------------- | ------------------------------------------------------------ |
@@ -198,7 +198,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | Tareas de seguimiento  | –                                                            |
 | Criterio de aceptación | - El comando es eliminado correctamente.<br />- El usuario es avisado en caso de error al eliminar los datos del comando.<br />- Tests unitarios y integración son creados dentro de lo posible. |
 
-**Desplegar bot**
+### Desplegar bot
 
 | Sección                | Contenido                                                    |
 | ---------------------- | ------------------------------------------------------------ |
@@ -212,7 +212,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | Tareas de seguimiento  | –                                                            |
 | Criterio de aceptación | - El bot queda desplegado correctamente.<br />- El usuario es avisado en caso de error al desplegar un bot.<br />- Tests unitarios y integración son creados dentro de lo posible. |
 
-**Cancelar despliegue de bot**
+### Cancelar despliegue de bot
 
 | Sección                | Contenido                                                    |
 | ---------------------- | ------------------------------------------------------------ |
@@ -226,7 +226,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | Tareas de seguimiento  | –                                                            |
 | Criterio de aceptación | - El despliegue del bot es cancelado.<br />- El usuario es avisado en caso de error al cancelar el despliegue del bot.<br />- Tests unitarios y integración son creados dentro de lo posible. |
 
-**Consultar estado de los despliegues**
+### Consultar estado de los despliegues
 
 | Sección                | Contenido                                                    |
 | ---------------------- | ------------------------------------------------------------ |
@@ -240,7 +240,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | Tareas de seguimiento  | –                                                            |
 | Criterio de aceptación | - Los datos de los bots de Discord que se encuentran desplegados son devueltos al usuario.<br />- El usuario es avisado en caso de error al obtener los datos de despliegue.<br />- Tests unitarios y integración son creados dentro de lo posible. |
 
-**Interfaz de usuario**
+### Interfaz de usuario
 
 | Sección                | Contenido                                                    |
 | ---------------------- | ------------------------------------------------------------ |
