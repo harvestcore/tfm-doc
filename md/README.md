@@ -10,4 +10,4 @@ Creación de un sistema para la gestión y despliegue de bots de Discord.
    2. [Base de datos](diseño/base-datos.md)
 4. [Estado del arte](estado-del-arte/estado-del-arte.md)
 5. [Planificación](planificacion/planificacion.md)
-   1. [Planificación](planificacion/milestones.md)
+   1. [Milestones](planificacion/milestones.md)
