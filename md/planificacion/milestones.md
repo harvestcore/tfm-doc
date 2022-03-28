@@ -6,9 +6,9 @@ Para la realización de este proyecto se ha propuesto la creación de los siguie
 
 ## [00 - Configuración del entorno, tests y CI](https://github.com/harvestcore/matroos/milestone/3)
 
-**Versión objetivo:** 0.0.0
+**Versión objetivo:** 0.0.1
 
-Este primer *milestone* no es un MVP como tal, pero es un paso necesario a la hora de iniciar un proyecto software. El principal propósito de este *milestone* es establecer la estructura del repositorio que se va a utilizar, los proyectos iniciales necesarios y la configuración de la integración continua.
+Este primer *milestone* es un paso necesario a la hora de iniciar un proyecto software. El principal propósito de este *milestone* es establecer la estructura del repositorio que se va a utilizar, los proyectos iniciales necesarios y la configuración de la integración continua.
 
 Funcionalidad que debe incluir:
 
@@ -20,11 +20,26 @@ Decisiones técnicas:
 - [Lenguaje de programación y framework](../analisis/herramientas.md#lenguaje-de-programación)
 - [Arquitectura](../analisis/arquitectura.md)
 
-## [01 - Creación y configuración de bots](https://github.com/harvestcore/matroos/milestone/6)
+## 01 - Integración con la base de datos
 
-**Versión objetivo:** 0.0.1
+**Versión objetivo:** 0.0.2
 
-En este *milestone* el principal objetivo es permitir la creación y configuración de bots mediante código. Esto significa que un usuario con conocimientos más avanzados en el desarrollo de aplicaciones será capaz de crear bots y comandos de Discord, y además podrá realizar la configuración de ambos. También se incluye en este *milestone* la integración con la base de datos, donde se guardarán todos los datos relacionados.
+El principal objetivo de este *milestone* es la integración del componente principal del software ([`backend`](https://github.com/harvestcore/matroos/tree/develop/backend)) con base de datos, de forma que se puedan almacenar fácilmente los datos necesarios.
+
+Funcionalidad que debe incluir:
+
+- Integración de la base de datos con el proyecto principal del software ([`backend`](https://github.com/harvestcore/matroos/tree/develop/backend)).
+
+Decisiones técnicas:
+
+- [Arquitectura](../analisis/arquitectura.md)
+- [Base de datos](../analisis/herramientas.md#base-de-datos)
+
+## 02 - Creación y configuración de bots
+
+**Versión objetivo:** 0.0.3
+
+La finalidad de este *milestone* es la creación y configuración de bots. Para ello se ampliará la funcionalidad del proyecto de recursos compartidos ([`resources`](https://github.com/harvestcore/matroos/tree/develop/resources)) y el proyecto principal ([`backend`](https://github.com/harvestcore/matroos/tree/develop/backend)), el cual implementa el servicio que gestiona estas operaciones.
 
 Funcionalidad que debe incluir:
 
@@ -36,11 +51,29 @@ Decisiones técnicas:
 - [Arquitectura](../analisis/arquitectura.md)
 - [Base de datos](../analisis/herramientas.md#base-de-datos)
 
-## [02 - Despliegue de bots en workers](https://github.com/harvestcore/matroos/milestone/5)
+## 03 - Creación y configuración de comandos
 
-**Versión objetivo:** 0.0.2
+**Versión objetivo:** 0.0.4
 
-Tras la posibilidad de crear, configurar y almacenar bots, estos se deben poder desplegar. El objetivo de este *milestone* es permitir el despliegue (la ejecución) de los bots en los workers. Esto significa que un usuario con conocimientos más avanzados en el desarrollo de aplicaciones será capaz de desplegar (ejecutar) bots que podrán ser usados en servidores de Discord.
+El objetivo de este *milestone* es la creación y configuración de comandos, los cuales podrán ser configurados en bots para después ser utilizados en los servidores de Discord. Para ello se ampliará la funcionalidad del proyecto de recursos compartidos ([`resources`](https://github.com/harvestcore/matroos/tree/develop/resources)) y el proyecto principal (https://github.com/harvestcore/matroos/tree/develop/backend)), el cual implementa el servicio que gestiona estas operaciones.
+
+Tras la finalización de este *milestone* la creación y configuración de bots mediante código será posible. Esto significa que un usuario con conocimientos más avanzados en el desarrollo de aplicaciones será capaz de crear bots y comandos de Discord, y además podrá realizar la configuración de ambos.
+
+Funcionalidad que debe incluir:
+
+- Creación y configuración de bots y comandos.
+- Integración con base de datos.
+
+Decisiones técnicas:
+
+- [Arquitectura](../analisis/arquitectura.md)
+- [Base de datos](../analisis/herramientas.md#base-de-datos)
+
+## [04 - Despliegue de bots en workers](https://github.com/harvestcore/matroos/milestone/5)
+
+**Versión objetivo:** 0.0.3
+
+Tras la posibilidad de crear, configurar y almacenar bots, estos se deben poder desplegar. El objetivo de este *milestone* es permitir el despliegue (la ejecución) de los bots en los workers. Esto significa que un usuario con conocimientos más avanzados en el desarrollo de aplicaciones será capaz de desplegar bots que podrán ser usados en servidores de Discord.
 
 Funcionalidad que debe incluir:
 
@@ -52,11 +85,11 @@ Decisiones técnicas:
 - [Lenguaje de programación y framework](../analisis/herramientas.md#lenguaje-de-programación)
 - [Arquitectura](../analisis/arquitectura.md)
 
-## [03 - API REST](https://github.com/harvestcore/matroos/milestone/7)
+## [05 - API REST](https://github.com/harvestcore/matroos/milestone/7)
 
 **Versión objetivo:** 0.1.0
 
-Una vez que tanto el componente backend como el componente escalable worker están finalizados, estos sólo son accesibles mediante código. El objetivo de este *milestone* es definir la API REST que permita realizar todas las funcionalidades implementadas en *milestones* anteriores (creación, configuración y despliegue de bots).
+Una vez que tanto el componente backend como el componente escalable worker están finalizados, estos sólo son accesibles mediante código. El objetivo de este *milestone* es definir e implementar la API REST que permita realizar todas las funcionalidades implementadas en *milestones* anteriores (creación, configuración y despliegue de bots). Una vez finalizado este *milestone* el software será capaz de responder a las diferentes peticiones que se le hagan mediante la API REST.
 
 Funcionalidad que debe incluir:
 
@@ -67,7 +100,7 @@ Decisiones técnicas:
 - [Lenguaje de programación y framework](../analisis/herramientas.md#lenguaje-de-programación)
 - [Arquitectura](../analisis/arquitectura.md)
 
-## [04 - Despliegue en contenedores Docker](https://github.com/harvestcore/matroos/milestone/3)
+## [06 - Despliegue en contenedores Docker](https://github.com/harvestcore/matroos/milestone/3)
 
 **Versión objetivo:** 0.2.0
 
@@ -83,7 +116,7 @@ Decisiones técnicas:
 
 - [Despliegue en contenedores](../analisis/herramientas.md#despliegue-en-contenedores)
 
-## [05 - Interfaz de usuario](https://github.com/harvestcore/matroos/milestone/9)
+## [07 - Interfaz de usuario](https://github.com/harvestcore/matroos/milestone/9)
 
 **Versión objetivo:** 0.3.0
 
@@ -101,7 +134,7 @@ Decisiones técnicas:
 - [Frontend](../analisis/herramientas.md#frontend)
 - [Arquitectura](../analisis/arquitectura.md)
 
-## [06 - Despliegue cloud](https://github.com/harvestcore/matroos/milestone/4)
+## [08 - Despliegue cloud](https://github.com/harvestcore/matroos/milestone/4)
 
 **Versión objetivo:** 0.4.0
 
