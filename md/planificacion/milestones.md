@@ -24,11 +24,11 @@ Decisiones técnicas:
 
 **Versión objetivo:** 0.0.2
 
-El principal objetivo de este *milestone* es la integración del componente principal del software ([`backend`](https://github.com/harvestcore/matroos/tree/develop/backend)) con base de datos, de forma que se puedan almacenar fácilmente los datos necesarios.
+El principal objetivo de este *milestone* es la integración del componente principal del software ([`backend`](https://github.com/harvestcore/matroos/tree/develop/backend)) con base de datos (MongoDB), de forma que se puedan almacenar fácilmente los datos necesarios.
 
 Funcionalidad que debe incluir:
 
-- Integración de la base de datos con el proyecto principal del software ([`backend`](https://github.com/harvestcore/matroos/tree/develop/backend)).
+- Integración de la base de datos con el [`backend`](https://github.com/harvestcore/matroos/tree/develop/backend).
 
 Decisiones técnicas:
 
@@ -55,7 +55,7 @@ Decisiones técnicas:
 
 **Versión objetivo:** 0.0.4
 
-El objetivo de este *milestone* es la creación y configuración de comandos, los cuales podrán ser configurados en bots para después ser utilizados en los servidores de Discord. Para ello se ampliará la funcionalidad del proyecto de recursos compartidos ([`resources`](https://github.com/harvestcore/matroos/tree/develop/resources)) y el proyecto principal (https://github.com/harvestcore/matroos/tree/develop/backend)), el cual implementa el servicio que gestiona estas operaciones.
+El objetivo de este *milestone* es la creación y configuración de comandos, los cuales podrán ser configurados en bots para después ser utilizados en los servidores de Discord. Para ello se ampliará la funcionalidad del proyecto de recursos compartidos ([`resources`](https://github.com/harvestcore/matroos/tree/develop/resources)) y el proyecto principal ([`backend`](https://github.com/harvestcore/matroos/tree/develop/backend)), el cual implementa el servicio que gestiona estas operaciones.
 
 Tras la finalización de este *milestone* la creación y configuración de bots mediante código será posible. Esto significa que un usuario con conocimientos más avanzados en el desarrollo de aplicaciones será capaz de crear bots y comandos de Discord, y además podrá realizar la configuración de ambos.
 
