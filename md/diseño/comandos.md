@@ -28,102 +28,14 @@ Modos de ejecución de comandos. No todos los comandos se pueden (o deben) ejecu
 - `HEADLESS` Los parámetros del comando se introducen al crear el comando. El comando no se puede ejecutar manualmente.
 - `SINGLE` El comando no necesita parámetros.
 
-### Ejemplos de UserCommands
+## CommandType
 
-```json
-// Comando INLINE, los parámetros se especifican al ejecutar  el comando.
-// -> !ping my-service.com
-// -> The ping is 17ms. 
+Tipos de comandos que se pueden crear. Esta lista es extensible.
 
-{
-    "Id": "3F2504E0-4F89-11D3-9A0C-0305E82C3301",
-    "Name": "Ping my-service.com",
-    "Description": "Pings my-service.com and returns the response.",
-    "Type": CommandType.PING,
-    "Trigger": "ping",
-    "Alias": "",
-    "Mode": CommandMode.INLINE,
-    "Parameters": {},
-    "CreatedAt": "01/01/2020",
-    "UpdatedAt": "01/01/2020"
-}
-
-// Comando SCOPED, los parámetros se especifican al crear el comando.
-// -> !ping doc
-// -> The ping is 13ms.
-{
-    "Id": "3F2504E0-4F89-11D3-9A0C-0305E82C3301",
-    "Name": "Ping Document",
-    "Description": "Pings the document and returns the response.",    
-    "Type": CommandType.PING,
-    "Trigger": "ping",
-    "Alias": "doc",
-    "Mode": CommandMode.SCOPED,
-    "Parameters": {
-        "Host": "https://docs.google.com/spreadsheets/d/1IkAO3mySS-cIOhiMss4Cvh6mnQa5_AasTwb_RvjXVc4"
-    },
-    "CreatedAt": "01/01/2020",
-    "UpdatedAt": "01/01/2020"
-}
-
-// MESSAGE
-// Comando SCOPED, los parámetros se especifican al crear el comando. No necesita argumentos al invocar el comando.
-// -> !message
-// -> Hola!
-{
-    "Id": "message-command-id",
-    "Name": "Send message",
-    "Description": "Sends a message.",
-    "Type": CommandType.MESSAGE,
-    "Trigger": "message",
-    "Alias": null,
-    "Mode": CommandMode.SCOPED,
-    "Parameters": {
-        "Message": "Hola!",
-        "IsResponse": false,
-        "ChannelId": null
-    },
-    "CreatedAt": "01/01/2020",
-    "UpdatedAt": "01/01/2020"
-}
-
-// STATUS
-// Comando SINGLE, no necesita parámetros.
-// -> !status
-// -> Bot name: Test Bot - Uptime: 10h
-{
-    "Id": "3F2504E0-4F89-11D3-9A0C-0305E82C3301",
-    "Name": "Status",
-    "Description": "Sends the bot status.",
-    "Type": CommandType.STATUS,
-    "Trigger": "status",
-    "Alias": null,
-    "Mode": CommandMode.SINGLE,
-    "Parameters": {},
-    "CreatedAt": "01/01/2020",
-    "UpdatedAt": "01/01/2020"
-}
-
-// TIMER
-// Comando HEADLESS, los parámetros se especifican al crear el comando, y el comando se invoca sin actuación del usuario.
-// -> 
-// -> Hola!
-{
-    "Id": "3F2504E0-4F89-11D3-9A0C-0305E82C3301",
-    "Name": "Timer Greetings",
-    "Description": "Sends the Greeting message every 10 minutes.",
-    "Type": CommandType.TIMER,
-    "Trigger": null,
-    "Alias": null,
-    "Mode": CommandMode.HEADLESS,
-    "Parameters": {
-        "Interval": "*/10 * * * *",
-        "CommandId": "message-command-id"
-    },
-    "CreatedAt": "01/01/2020",
-    "UpdatedAt": "01/01/2020"
-}
-```
+- `MESSAGE`
+- `PING`
+- `STATUS`
+- `TIMER`
 
 ## BaseCommand
 
@@ -142,7 +54,7 @@ Define las características básicas de un tipo de comando. Estas son:
 - `Required: boolean` Si el parámetro es requerido o no.
 - `Type: DataType` El tipo de dato del parámetro.
 
-## DataType
+### DataType
 
 Tipos de datos. Esta lista es extensible.
 
@@ -152,15 +64,6 @@ Tipos de datos. Esta lista es extensible.
 - `INTEGER`
 - `STRING`
 - `LIST`
-
-## CommandType
-
-Tipos de comandos que se pueden crear. Esta lista es extensible.
-
-- `MESSAGE`
-- `PING`
-- `STATUS`
-- `TIMER`
 
 ## Custom Commands
 
@@ -268,3 +171,101 @@ Parámetros:
         }
     }
 }
+```
+
+## Ejemplos de UserCommands
+
+```json
+// Comando INLINE, los parámetros se especifican al ejecutar  el comando.
+// -> !ping my-service.com
+// -> The ping is 17ms. 
+
+{
+    "Id": "3F2504E0-4F89-11D3-9A0C-0305E82C3301",
+    "Name": "Ping my-service.com",
+    "Description": "Pings my-service.com and returns the response.",
+    "Type": CommandType.PING,
+    "Trigger": "ping",
+    "Alias": "",
+    "Mode": CommandMode.INLINE,
+    "Parameters": {},
+    "CreatedAt": "01/01/2020",
+    "UpdatedAt": "01/01/2020"
+}
+
+// Comando SCOPED, los parámetros se especifican al crear el comando.
+// -> !ping doc
+// -> The ping is 13ms.
+{
+    "Id": "3F2504E0-4F89-11D3-9A0C-0305E82C3301",
+    "Name": "Ping Document",
+    "Description": "Pings the document and returns the response.",    
+    "Type": CommandType.PING,
+    "Trigger": "ping",
+    "Alias": "doc",
+    "Mode": CommandMode.SCOPED,
+    "Parameters": {
+        "Host": "https://docs.google.com/spreadsheets/d/1IkAO3mySS-cIOhiMss4Cvh6mnQa5_AasTwb_RvjXVc4"
+    },
+    "CreatedAt": "01/01/2020",
+    "UpdatedAt": "01/01/2020"
+}
+
+// MESSAGE
+// Comando SCOPED, los parámetros se especifican al crear el comando. No necesita argumentos al invocar el comando.
+// -> !message
+// -> Hola!
+{
+    "Id": "message-command-id",
+    "Name": "Send message",
+    "Description": "Sends a message.",
+    "Type": CommandType.MESSAGE,
+    "Trigger": "message",
+    "Alias": null,
+    "Mode": CommandMode.SCOPED,
+    "Parameters": {
+        "Message": "Hola!",
+        "IsResponse": false,
+        "ChannelId": null
+    },
+    "CreatedAt": "01/01/2020",
+    "UpdatedAt": "01/01/2020"
+}
+
+// STATUS
+// Comando SINGLE, no necesita parámetros.
+// -> !status
+// -> Bot name: Test Bot - Uptime: 10h
+{
+    "Id": "3F2504E0-4F89-11D3-9A0C-0305E82C3301",
+    "Name": "Status",
+    "Description": "Sends the bot status.",
+    "Type": CommandType.STATUS,
+    "Trigger": "status",
+    "Alias": null,
+    "Mode": CommandMode.SINGLE,
+    "Parameters": {},
+    "CreatedAt": "01/01/2020",
+    "UpdatedAt": "01/01/2020"
+}
+
+// TIMER
+// Comando HEADLESS, los parámetros se especifican al crear el comando, y el comando se invoca sin actuación del usuario.
+// -> 
+// -> Hola!
+{
+    "Id": "3F2504E0-4F89-11D3-9A0C-0305E82C3301",
+    "Name": "Timer Greetings",
+    "Description": "Sends the Greeting message every 10 minutes.",
+    "Type": CommandType.TIMER,
+    "Trigger": null,
+    "Alias": null,
+    "Mode": CommandMode.HEADLESS,
+    "Parameters": {
+        "Interval": "*/10 * * * *",
+        "CommandId": "message-command-id"
+    },
+    "CreatedAt": "01/01/2020",
+    "UpdatedAt": "01/01/2020"
+}
+```
