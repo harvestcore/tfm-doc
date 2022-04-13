@@ -4,11 +4,11 @@ Un *minimum viable product*, o MVP, es un producto con las suficientes caracter�
 
 Para la realización de este proyecto se ha propuesto la creación de los siguientes MPVs (o *milestones*, como se llaman en [GitHub](https://github.com/harvestcore/matroos/milestones)).
 
-## 00 - Configuración del entorno, tests y CI
+## [00 - Configuración del entorno, tests y CI](https://github.com/harvestcore/matroos/milestone/3)
 
 **Versión objetivo:** 0.0.1
 
-Este primer *milestone* es un paso necesario a la hora de iniciar un proyecto software. El principal propósito de este *milestone* es establecer la estructura del repositorio que se va a utilizar, los proyectos iniciales necesarios y la configuración de la integración continua.
+Este *milestone* establece la estructura del repositorio que se va a utilizar, los proyectos iniciales necesarios y la configuración de la integración continua.
 
 Funcionalidad que debe incluir:
 
@@ -20,11 +20,11 @@ Decisiones técnicas:
 - [Lenguaje de programación y framework](../analisis/herramientas.md#lenguaje-de-programación)
 - [Arquitectura](../analisis/arquitectura.md)
 
-## 01 - Almacén de datos
+## [01 - Almacén de datos](https://github.com/harvestcore/matroos/milestone/11)
 
 **Versión objetivo:** 0.0.2
 
-Este *milestone* incluye la integración del componente principal del software ([`backend`](https://github.com/harvestcore/matroos/tree/develop/backend)) con base de datos (MongoDB) mediante la implementación de un servicio, de forma que es posible almacenar fácilmente todos los datos necesarios. 
+Este *milestone* incluye la integración del componente principal del software ([`backend`](https://github.com/harvestcore/matroos/tree/develop/backend)) con base de datos (MongoDB) mediante la implementación de un servicio, de forma que es posible almacenar fácilmente todos los datos necesarios.
 
 Funcionalidad que incluye:
 
@@ -36,7 +36,7 @@ Decisiones técnicas:
 - [Arquitectura](../analisis/arquitectura.md)
 - [Base de datos](../diseño/base-datos.md)
 
-## 02 - Gestión de bots
+## [02 - Gestión de bots](https://github.com/harvestcore/matroos/milestone/6)
 
 **Versión objetivo:** 0.0.3
 
@@ -51,7 +51,7 @@ Decisiones técnicas:
 - [Arquitectura](../analisis/arquitectura.md)
 - [Base de datos](../diseño/base-datos.md)
 
-## 03 - Gestión de comandos
+## [03 - Gestión de comandos](https://github.com/harvestcore/matroos/milestone/10)
 
 **Versión objetivo:** 0.0.4
 
@@ -69,9 +69,9 @@ Decisiones técnicas:
 - [Base de datos](../diseño/base-datos.md)
 - [Comandos](../diseño/comandos.md)
 
-## 04 - Despliegue de bots en workers
+## [04 - Despliegue de bots en workers](https://github.com/harvestcore/matroos/milestone/5)
 
-**Versión objetivo:** 0.0.3
+**Versión objetivo:** 0.0.5
 
 Este *milestone* habilita el despliegue (la ejecución) de los bots en los workers. Tras la finalización de este milestone, un usuario con conocimientos más avanzados en el desarrollo de aplicaciones será capaz de desplegar bots que podrán ser usados en servidores de Discord.
 
@@ -85,7 +85,7 @@ Decisiones técnicas:
 - [Lenguaje de programación y framework](../analisis/herramientas.md#lenguaje-de-programación)
 - [Arquitectura](../analisis/arquitectura.md)
 
-## 05 - API REST
+## [05 - API REST](https://github.com/harvestcore/matroos/milestone/7)
 
 **Versión objetivo:** 0.1.0
 
@@ -100,7 +100,7 @@ Decisiones técnicas:
 - [Lenguaje de programación y framework](../analisis/herramientas.md#lenguaje-de-programación)
 - [Arquitectura](../analisis/arquitectura.md)
 
-## 06 - Despliegue en contenedores Docker
+## [06 - Despliegue en contenedores Docker](https://github.com/harvestcore/matroos/milestone/2)
 
 **Versión objetivo:** 0.2.0
 
@@ -117,7 +117,7 @@ Decisiones técnicas:
 - [Despliegue en contenedores](../analisis/herramientas.md#despliegue-en-contenedores)
 - [Arquitectura](../analisis/arquitectura.md)
 
-## 07 - Interfaz de usuario
+## [07 - Interfaz de usuario](https://github.com/harvestcore/matroos/milestone/9)
 
 **Versión objetivo:** 0.3.0
 
@@ -135,7 +135,7 @@ Decisiones técnicas:
 - [Frontend](../analisis/herramientas.md#frontend)
 - [Arquitectura](../analisis/arquitectura.md)
 
-## 08 - Despliegue cloud
+## [08 - Despliegue cloud](https://github.com/harvestcore/matroos/milestone/4)
 
 **Versión objetivo:** 0.4.0
 
