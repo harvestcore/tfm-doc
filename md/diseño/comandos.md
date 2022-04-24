@@ -1,6 +1,6 @@
 # Comandos
 
-Los comandos son las órdenes que se pueden configurar en un bot para que se ejecuten en ellos cuando el usuario quiere. Estos pueden ser invocados de distintas formas.
+Los comandos son las órdenes que se pueden configurar en un [bot](./bots.md) para que se ejecuten en ellos cuando el usuario quiere. Estos pueden ser invocados de distintas formas.
 
 ## UserCommand (BD)
 
@@ -8,16 +8,18 @@ Los comandos de usuario son los que crean los usuarios para después configurarl
 
 Parámetros:
 
-- `ID: GUID` Identificador del comando.
+- `ID: Guid` Identificador único del comando.
 - `Name: string` Nombre del comando.
-- `Description: string` Descripción del comando.
+- *`Description: string` Descripción del comando.
 - `Type: CommandType` Tipo de comando.
 - `Trigger: string` Activador del comando. Cadena que se escribe tras el prefijo para invocar este comando.
 - `Mode: CommandMode` Modo de ejecución del comando.
 - `Alias: string` Nombre interno del comando.
 - `Parameters: Dictionary<string, object>` Parámetros del comando.
-- `CreatedAt: DateTime` Fecha y hora de creación del comando.
-- `UpdatedAt: DateTime` Fecha y hora de actualización del comando.
+- *`CreatedAt: DateTime` Fecha y hora de creación del comando.
+- *`UpdatedAt: DateTime` Fecha y hora de actualización del comando.
+
+> *: De carácter opcional. No son estrictamente necesarios para crear un comando funcional.
 
 ## CommandMode
 
@@ -176,14 +178,15 @@ Parámetros:
 ## Ejemplos de UserCommands
 
 ```json
+// PING
 // Comando INLINE, los parámetros se especifican al ejecutar  el comando.
 // -> !ping my-service.com
 // -> The ping is 17ms. 
 
 {
     "Id": "3F2504E0-4F89-11D3-9A0C-0305E82C3301",
-    "Name": "Ping my-service.com",
-    "Description": "Pings my-service.com and returns the response.",
+    "Name": "Ping",
+    "Description": "Pings a site and returns the response.",
     "Type": CommandType.PING,
     "Trigger": "ping",
     "Alias": "",
@@ -194,18 +197,18 @@ Parámetros:
 }
 
 // Comando SCOPED, los parámetros se especifican al crear el comando.
-// -> !ping doc
+// -> !ping my-site
 // -> The ping is 13ms.
 {
     "Id": "3F2504E0-4F89-11D3-9A0C-0305E82C3301",
     "Name": "Ping Document",
-    "Description": "Pings the document and returns the response.",    
+    "Description": "Pings my-site.com and returns the response.",    
     "Type": CommandType.PING,
     "Trigger": "ping",
-    "Alias": "doc",
+    "Alias": "my-site",
     "Mode": CommandMode.SCOPED,
     "Parameters": {
-        "Host": "https://docs.google.com/spreadsheets/d/1IkAO3mySS-cIOhiMss4Cvh6mnQa5_AasTwb_RvjXVc4"
+        "Host": "my-site.com"
     },
     "CreatedAt": "01/01/2020",
     "UpdatedAt": "01/01/2020"
