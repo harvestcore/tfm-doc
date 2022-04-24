@@ -38,7 +38,7 @@ Implementar un sistema de autenticación implica la adición de una lógica extr
 Por otro lado, existen multitud de software y servicios que se dedican exclusivamente a la autenticación, y cuya integración con Matroos sería sencilla e incluiría esa capa de seguridad que falta. Algunos ejemplos son los siguientes:
 
 - Auth0
-- LDAP (con Traefik o NGinx)
+- LDAP (con Traefik, NGinx u otros)
 - OAuth2
 - Firebase
 - Amazon Cognito
