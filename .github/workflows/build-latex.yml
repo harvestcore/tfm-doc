@@ -5,12 +5,15 @@ jobs:
   build-resume:
     runs-on: ubuntu-latest
     name: Build project and push artifact
+
+    container:
+      image: danteev/texlive:latest
+
     steps:
     - name: Checkout branch
       uses: actions/checkout@v2
 
     - name: Build project
-      uses: docker://danteev/texlive:latest
       working-directory: ./tex
       run: make doc
 
