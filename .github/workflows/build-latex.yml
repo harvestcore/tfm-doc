@@ -8,12 +8,15 @@ jobs:
     steps:
     - name: Checkout branch
       uses: actions/checkout@v2
+
     - name: Build project
-      uses: closoco/pdflatex-action@v1.0.0
-      with:
-        texFile: ./tex/proyecto.tex
+      uses: docker://danteev/texlive:latest
+      working-directory: ./tex
+      run: make doc
+
     - name: Upload artifact
+      working-directory: ./tex
       uses: actions/upload-artifact@v2
       with:
         name: proyecto.pdf
-        path: ./text/proyecto.pdf
+        path: ./proyecto.pdf
