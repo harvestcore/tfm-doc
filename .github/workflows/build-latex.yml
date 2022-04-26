@@ -1,0 +1,19 @@
+name: Build LaTeX project
+on: [push]
+
+jobs:
+  build-resume:
+    runs-on: ubuntu-latest
+    name: Build project and push artifact
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v2
+    - name: Build project
+      uses: closoco/pdflatex-action@v1.0.0
+      with:
+        texFile: ./tex/proyecto.tex
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: proyecto.pdf
+        path: ./text/proyecto.pdf
