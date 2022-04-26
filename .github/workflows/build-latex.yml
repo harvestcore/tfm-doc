@@ -18,10 +18,10 @@ jobs:
       run: make doc
 
     - name: Set date
-      run: echo "$(date +"%D-%T")" >> ${DATETIME}
+      run: echo "datetime=$(date +"%D-%T")" >> $GITHUB_ENV
 
     - name: Upload project artifact
       uses: actions/upload-artifact@v3
       with:
-        name: proyecto_${DATETIME}
+        name: proyecto_${{ env.datetime }}
         path: ./tex/proyecto.pdf
