@@ -17,7 +17,11 @@ jobs:
       working-directory: ./tex
       run: make doc
 
-    - uses: actions/upload-artifact@v3
+    - name: Set date
+      run: echo "$(date +"%D-%T")" >> ${DATETIME}
+
+    - name: Upload project artifact
+      uses: actions/upload-artifact@v3
       with:
-        name: proyecto.pdf
+        name: proyecto_${DATETIME}
         path: ./tex/proyecto.pdf
