@@ -18,7 +18,7 @@ jobs:
       run: make doc
 
     - name: Set date
-      run: echo "datetime=$(date +"%D-%T")" >> $GITHUB_ENV
+      run: echo "datetime=$(date +"%Y%m%d-%H%M%S")" >> $GITHUB_ENV
 
     - name: Upload project artifact
       uses: actions/upload-artifact@v3
