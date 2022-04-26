@@ -18,7 +18,6 @@ jobs:
       run: make doc
 
     - uses: actions/upload-artifact@v3
-      working-directory: ./tex
       with:
         name: proyecto.pdf
-        path: ./proyecto.pdf
+        path: ./tex/proyecto.pdf
