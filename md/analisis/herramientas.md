@@ -12,7 +12,7 @@ C#
 
 [Completar]
 
-**.NET 6** Es el framework más popular, más utilizado y con más soporte. Existe otra versión más extensa que incluye soporte para vistas (siguiendo el patrón MVC), pero esa no tiene especial relevancia en el software que se desarrolla. También cabe destacar que en su última versión, la 6, el rendimiento ha mejorado mucho respecto a versiones anteriores, lo que ha hecho que se sitúe en mejor posición respecto a otros frameworks de desarrollo web backend.
+**.NET** Es el framework más popular, más utilizado y con más soporte. Existe otra versión más extensa que incluye soporte para vistas (siguiendo el patrón MVC), pero esa no tiene especial relevancia en el software que se desarrolla. También cabe destacar que en su última versión, la 6, el rendimiento ha mejorado mucho respecto a versiones anteriores, lo que ha hecho que se sitúe en mejor posición respecto a otros frameworks de desarrollo web backend.
 
 #### Logs
 

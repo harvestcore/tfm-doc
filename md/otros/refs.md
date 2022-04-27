@@ -12,3 +12,6 @@
 - [Next.js](https://nextjs.org/)
 - [.NET](https://docs.microsoft.com/es-es/dotnet/)
 - [Serilog](https://serilog.net/)
+- [Top 7 Programming Languages for Backend Web Development](https://www.geeksforgeeks.org/top-7-programming-languages-for-backend-web-development/)
+- [8 Best Web Development](https://intellipaat.com/blog/best-web-development-languages/)
+
