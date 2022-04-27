@@ -4,3 +4,5 @@
 *.log
 *.lof
 *.aux
+*.spellcheck
+*.rws

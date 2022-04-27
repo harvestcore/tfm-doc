@@ -1,0 +1,18 @@
+name: Check spelling
+on: [push]
+
+jobs:
+  build-resume:
+    runs-on: ubuntu-latest
+    name: Check spelling
+
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v2
+
+    - name: Install aspell
+      run: apt install aspell aspell-es
+
+    - name: Check spelling
+      working-directory: ./tex
+      run: make spell
