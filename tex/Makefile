@@ -9,7 +9,10 @@ all: proyecto.pdf
 %.pdf: %.tex
 	pdflatex $< && bibtex $* && pdflatex $< && pdflatex $<
 
-spell:
+spellrights:
+	chmod +x ./check-spelling.sh 
+
+spell: spellrights
 	./check-spelling.sh
 
 clean:
