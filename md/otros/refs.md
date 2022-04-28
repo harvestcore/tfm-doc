@@ -14,4 +14,7 @@
 - [Serilog](https://serilog.net/)
 - [Top 7 Programming Languages for Backend Web Development](https://www.geeksforgeeks.org/top-7-programming-languages-for-backend-web-development/)
 - [8 Best Web Development](https://intellipaat.com/blog/best-web-development-languages/)
-
+- [The Good and the Bad of C# Programming](https://www.altexsoft.com/blog/c-sharp-pros-and-cons/)
+- [Stack Overflow Developer Survey 2021](https://insights.stackoverflow.com/survey/2021#most-popular-technologies-language)
+- [Benchmarks for programming languages and compilers](https://programming-language-benchmarks.vercel.app/)
+- [TechEmpower Framework Benchmarks](https://www.techempower.com/benchmarks/)
