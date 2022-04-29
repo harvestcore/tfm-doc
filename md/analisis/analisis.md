@@ -1,9 +1,30 @@
 # Análisis
 
-## Descripción de actores
+## Actores
 
-- **Administrador**: Crea los bots y los comandos. Tiene poder de configuración y de despliegue. Puede ser también usuario del bot. Agrega los bots a los servidores de Discord.
-- **Usuario de Discord**: No realiza ningún tipo de configuración de los bots o comandos. Interactúa con los bots una vez ya han sido configurados y desplegados por un usuario administrador. Hace uso de los comandos configurados en el bot.
+En el sistema hay dos actores.
+
+- **Administrador**
+- **Usuario de Discord**
+
+## Casos de uso
+
+### Usuario de Discord
+
+1. Usar comando.
+
+### Administrador
+
+1. Crear bot
+2. Editar bot
+3. Eliminar bot
+4. Crear comando
+5. Editar comando
+6. Eliminar comando
+7. Agregar comando a bot
+8. Eliminar comando de bot
+9. Desplegar bot
+10. Cancelar despliegue de un bot
 
 ## Requisitos del sistema
 
@@ -32,24 +53,29 @@
 3. El sistema almacenará para cada bot un identificador único, un nombre, una key y una lista de comandos.
 4. El sistema almacenará para cada comando, un identificador único, un nombre, una lista de argumentos y un atributo que indique el tipo del comando (global o específico).
 
-## Casos de uso
+## Personas
 
-### Usuario de Discord
+<div id="admin" />
 
-1. Usar comando.
+| Nombre        | Jorge Cancho                                                 |
+| ------------- | ------------------------------------------------------------ |
+| Rol           | Administrador                                                |
+| Descripción   | 24 años.<br />Disfruta de las tardes con sus amigos en Discord jugando a sus videojuegos favoritos. |
+| Intereses     | Discord, ya que le parece una herramienta muy potente.<br />Videojuegos, le encantan los *shooters*.<br />Automatización de tareas repetitivas, ya que odia hacer lo mismo continuamente.<br />Programación, ya que disfruta creando software para facilitar su día a día.<br />Monitorización, le gusta saber que todo el software que despliega funciona correctamente.<br />Creación de servidores de juegos, para jugar con sus amigos y no tener que depender de servidores de terceros. |
+| Formación     | Ingeniero informático.<br />Tiene conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Frustraciones | Tener que realizar tareas repetitivas.                       |
+| Necesidades   | Un software o sistema que le permita programar las tareas repetitivas de monitorización y automatización que tanto odia. Usa mucho Discord, por lo que piensa que sería útil que el software estuviera integrado con esa herramienta. |
 
-### Usuario administrador
+<div id="user" />
 
-1. Crear bot
-2. Editar bot
-3. Eliminar bot
-4. Crear comando
-5. Editar comando
-6. Eliminar comando
-7. Agregar comando a bot
-8. Eliminar comando de bot
-9. Desplegar bot
-10. Cancelar despliegue de un bot
+| Nombre        | David Infante                                                |
+| ------------- | ------------------------------------------------------------ |
+| Rol           | Usuario de Discord                                           |
+| Descripción   | 25 años.<br />Amigo de Jorge Cancho. No tiene ni idea de programación ni de temas relacionados con la ingeniería o la informática. Le gusta disfrutar de las tardes con sus amigos en Discord. |
+| Intereses     | Videojuegos, dedica la mayor parte de su tiempo a jugar con sus amigos.<br />La facilidad de las cosas, no le gusta complicarse la vida.<br />Discord, le parece una herramienta muy útil, ya que la usa con sus amigos y para temas laborales. |
+| Formación     | Magisterio de educación primaria.                            |
+| Frustraciones | No le gusta nada tener que indagar en detalles técnicos al jugar a videojuegos con sus amigos. Entiende que en ocasiones es necesaria alguna configuración para poder jugar (como acceder a un servidor), pero quiere que ese proceso sea lo más fácil posible. No le gusta tener que recordar esos detalles. |
+| Necesidades   | Una herramienta que le permita acceder a esos detalles sin preocuparse de recordarlos o de consultarlos de manera extraña. |
 
 ## Historias de usuario
 
@@ -92,7 +118,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | ---------------------- | ------------------------------------------------------------ |
 | Resumen                | Como usuario administrador quiero crear distintos bots de Discord en el sistema para poder configurarlos con los comandos que yo quiera para que éstos realicen las tareas que deseo al ejecutar los comandos en los canales donde he agregado los bots. |
 | Meta                   | Creación de bots para que más tarde puedan ser configurados y desplegados y para que puedan ejecutar los comandos configurados en ellos. |
-| Perfil de usuario      | Usuario administrador con conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Perfil de usuario      | [Administrador](#admin)                                      |
 | Escenario              | - Dado: que quiero crear un bot de Discord y configurar sus funcionalidades,<br />- Cuando: proveo al sistema de una KEY de bot de Discord y de un nombre para el bot,<br />- Entonces: el sistema crea un bot para que pueda empezar a configurarlo. |
 | Notas funcionales      | - No se debe permitir la creación de bots con el mismo nombre.<br />- No se debe permitir la creación de bots con la misma *key*. |
 | Notas técnicas         | Elementos necesarios para la creación del bot:<br />- *key: str [req]*. Key del bot, proporcionada en el panel de control de Discord.<br />- *name: str [req]*. Nombre del bot.<br /><br />Parámetros extra necesarios para crear un bot:<br />- *id: Guid [req]*. Identificador único para cada bot. |
@@ -106,7 +132,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | ---------------------- | ------------------------------------------------------------ |
 | Resumen                | Como usuario administrador quiero consultar los detalles de los bots de Discord creados en el sistema, para poder ver sus características y su configuración. |
 | Meta                   | Obtener todos los datos de un bot en concreto o de todos los bots creados en el sistema para consultar sus características y configuración. |
-| Perfil de usuario      | Usuario administrador con conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Perfil de usuario      | [Administrador](#admin)                                      |
 | Escenario              | - Dado: que quiero consultar los detalles de los bots creados en el sistema,<br />- Cuando: hago una petición al sistema para ello,<br />- Entonces: el sistema me devuelve los detalles y datos de los bots. |
 | Notas funcionales      | - Se debe permitir obtener los detalles de todos los bots.<br />- Se debe permitir obtener los detalles de un bot en específico. |
 | Notas técnicas         | Parámetros necesarios para obtener los detalles de un bot específico:<br />- *id: Guid [req]*. Identificador único para cada bot. |
@@ -120,7 +146,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | ---------------------- | ------------------------------------------------------------ |
 | Resumen                | Como usuario administrador quiero poder editar los detalles de un bot de Discord, para configurarle comandos nuevos, eliminar existentes o cambiar sus parámetros. |
 | Meta                   | Permitir la edición de los parámetros de los bots (comandos, nombre, key, etc). |
-| Perfil de usuario      | Usuario administrador con conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Perfil de usuario      | [Administrador](#admin)                                      |
 | Escenario              | - Dado: que quiero modificar los datos de un bot,<br />- Cuando: proveo al sistema del identificador del bot a editar y los datos que se deben modificar,<br />- Entonces: el sistema modifica los datos del bot. |
 | Notas funcionales      | - No se debe permitir la existencia de bots con el mismo nombre.<br />- No se debe permitir la existencia de bots con la misma *key*.<br />- En caso de agregar un comando a un bot, el comando debe estar creado previamente en el sistema.<br />- No se debe permitir la existencia comandos iguales en un mismo bot.<br />- En caso de que el bot se encuentre desplegado, debe reiniciarse el despliegue una vez la edición finaliza. |
 | Notas técnicas         | Parámetros necesarios para obtener los detalles de un bot específico y para modificarlo:<br />- *id: Guid [req]*. Identificador único para cada bot.<br />- *key: str*. Key del bot, proporcionada en el panel de control de Discord.<br />- *name: str*. Nombre del bot.<br />- *command_id: Guid*. Identificador único para cada comando. |
@@ -134,7 +160,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | ---------------------- | ------------------------------------------------------------ |
 | Resumen                | Como usuario administrador quiero poder eliminar un bot de Discord. |
 | Meta                   | Permitir el borrado de bots.                                 |
-| Perfil de usuario      | Usuario administrador con conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Perfil de usuario      | [Administrador](#admin)                                      |
 | Escenario              | - Dado: que quiero eliminar un bot,<br />- Cuando: proveo al sistema del identificador del bot a eliminar,<br />- Entonces: el sistema elimina el bot y sus datos asociados. |
 | Notas funcionales      | -  En caso de que el bot se encuentre desplegado, éste despliegue debe cancelarse. |
 | Notas técnicas         | Parámetros necesarios para eliminar un bot:<br />- *id: Guid [req]*. Identificador único para cada bot. |
@@ -148,7 +174,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | ---------------------- | ------------------------------------------------------------ |
 | Resumen                | Como usuario administrador quiero crear distintos comandos para los bots de Discord para que éstos realicen las tareas que deseo tras ejecutarlos en los canales de Discord. |
 | Meta                   | Creación de distintos comandos que posteriormente puedan ser asignados a bots. |
-| Perfil de usuario      | Usuario administrador con conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Perfil de usuario      | [Administrador](#admin)                                      |
 | Escenario              | - Dado: que quiero crear un comando de Discord y configurar sus funcionalidades,<br />- Cuando: proveo al sistema de un nombre para el comando y de un prefijo,<br />- Entonces: el sistema crea un comando para que pueda empezar a configurarlo. |
 | Notas funcionales      | - No se debe permitir la creación de comandos con el mismo nombre. |
 | Notas técnicas         | Elementos necesarios para la creación del comando:<br />- *name: str [req]*. Nombre del comando.<br />- *prefix: str [req]*. Prefijo del comando. |
@@ -162,7 +188,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | ---------------------- | ------------------------------------------------------------ |
 | Resumen                | Como usuario administrador quiero consultar los detalles de los comandos creados en el sistema. |
 | Meta                   | Obtener todos los datos de un comando en concreto o de todos los comandos creados en el sistema. |
-| Perfil de usuario      | Usuario administrador con conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Perfil de usuario      | [Administrador](#admin)                                      |
 | Escenario              | - Dado: que quiero consultar los detalles de los comandos creados en el sistema,<br />- Cuando: hago una petición al sistema para ello,<br />- Entonces: el sistema me devuelve los datos de los comandos. |
 | Notas funcionales      | - Se debe permitir obtener los detalles de todos los comandos.<br />- Se debe permitir obtener los detalles de un comando en específico. |
 | Notas técnicas         | Parámetros necesarios para obtener los detalles de un comando específico:<br />- *id: Guid [req]*. Identificador único para cada comando. |
@@ -176,7 +202,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | ---------------------- | ------------------------------------------------------------ |
 | Resumen                | Como usuario administrador quiero poder editar los detalles de un comando para . |
 | Meta                   | La edición de los parámetros de los comandos (nombre, prefijo, parámetros, etc). |
-| Perfil de usuario      | Usuario administrador con conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Perfil de usuario      | [Administrador](#admin)                                      |
 | Escenario              | - Dado: que quiero modificar los datos de un comando,<br />- Cuando: proveo al sistema del identificador del comando a editar y los datos que se deben modificar,<br />- Entonces: el sistema modifica los datos del comando. |
 | Notas funcionales      | - No se debe permitir la existencia de comandos con el mismo nombre.<br />- En caso de que el comando esté siendo usado por un bot que se encuentre desplegado, este debe ser reiniciado. |
 | Notas técnicas         | Parámetros necesarios para obtener los detalles de un bot específico y para modificarlo:<br />- *id: Guid [req]*. Identificador único para cada bot.<br />- *prefix: str*. Prefijo del comando.<br />- *params: dict*. Parámetros adicionales del comando. |
@@ -190,7 +216,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | ---------------------- | ------------------------------------------------------------ |
 | Resumen                | Como usuario administrador quiero poder eliminar un comando para que deje de estar disponible en el sistema. |
 | Meta                   | El borrado de comandos en el sistema.                        |
-| Perfil de usuario      | Usuario administrador con conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Perfil de usuario      | [Administrador](#admin)                                      |
 | Escenario              | - Dado: que quiero eliminar un comando,<br />- Cuando: proveo al sistema del identificador del comando a eliminar,<br />- Entonces: el sistema elimina el comando y sus datos asociados. |
 | Notas funcionales      | - En caso de que el comando esté en uso por un bot desplegado, éste debe reiniciarse. |
 | Notas técnicas         | Parámetros necesarios para eliminar un bot:<br />- *id: Guid [req]*. Identificador único para cada bot. |
@@ -204,7 +230,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | ---------------------- | ------------------------------------------------------------ |
 | Resumen                | Como usuario administrador quiero poder ejecutar los bots de Discord que he creado y configurado previamente en el sistema para poder hacer uso de los comandos de los que disponen en los servidores de Discord. |
 | Meta                   | Desplegar bots en los workers para que puedan usarse desde los servidores de Discord. |
-| Perfil de usuario      | Usuario administrador con conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Perfil de usuario      | [Administrador](#admin)                                      |
 | Escenario              | - Dado: que quiero desplegar un bot de Discord,<br />- Cuando: proveo al sistema de un identificador de bot de Discord existente,<br />- Entonces: el sistema despliega el bot automáticamente, lo que me permite empezar a hacer uso de sus comandos. |
 | Notas funcionales      | - No se debe permitir el despliegue de un bot varias veces.<br />- No se debe permitir el despliegue de un bot que no tiene comandos configurados. |
 | Notas técnicas         | Elementos necesarios para el despliegue del bot:<br />- *id: Guid [req]*. Identificador único para cada bot. |
@@ -218,7 +244,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | ---------------------- | ------------------------------------------------------------ |
 | Resumen                | Como usuario administrador quiero terminar la ejecución de un bot de Discord en el sistema para que deje de estar disponible. |
 | Meta                   | Terminar la ejecución de bots en los workers para que dejen de poder usarse desde los servidores de Discord. |
-| Perfil de usuario      | Usuario administrador con conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Perfil de usuario      | [Administrador](#admin)                                      |
 | Escenario              | - Dado: que quiero cancelar el despliegue de un bot para realizar algún tipo de tarea de mantenimiento,<br />- Cuando: proveo al sistema de un identificador de bot de Discord que se encuentre desplegado,<br />- Entonces: el sistema termina la ejecución del bot. |
 | Notas funcionales      | - No se debe permitir cancelar el despliegue de un bot que no se encuentra desplegado. |
 | Notas técnicas         | Parámetros necesarios para cancelar el despliegue de un bot:<br />- *id: Guid [req]*. Identificador único para cada bot. |
@@ -232,7 +258,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | ---------------------- | ------------------------------------------------------------ |
 | Resumen                | Como usuario administrador quiero conocer el estado de los despliegues de los bots de Discord en el sistema. |
 | Meta                   | Obtener detalles de los workers y de los bots que se encuentran desplegados en los workers. |
-| Perfil de usuario      | Usuario administrador con conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Perfil de usuario      | [Administrador](#admin)                                      |
 | Escenario              | - Dado: que quiero conocer el estado de los despliegues de los bots,<br />- Cuando: hago una petición al sistema para ello,<br />- Entonces: el sistema me devuelve los datos de los bots que se encuentran desplegados. |
 | Notas funcionales      | - No se deben devolver datos de configuración del bot.<br />- Se debe devolver información de los workers que ejecutan los bots. |
 | Notas técnicas         | Datos a devolver:<br />- *workers: []Worker, [req]*. Todos los workers que hay disponibles en el sistema.<br /><br />Worker:<br />- *id: Guid [req]*. Identificador único para cada worker.<br />- *uptime: DateTime*. El tiempo de actividad del worker.<br />- *location: str*. La URL donde se encuentra el worker.<br />- *bots: []Bot*. Los bots que están desplegados en el worker.<br /><br />Bot:<br />- *id: Guid [req]*. Identificador único para cada bot.<br />- *uptime: DateTime*. El tiempo de actividad del bot.<br />- ... |
@@ -246,7 +272,7 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | ---------------------- | ------------------------------------------------------------ |
 | Resumen                | Como usuario administrador quiero disponer de una interfaz gráfica para poder crear, configurar, desplegar y conocer el estado de los bots de Discord que hay en el sistema. |
 | Meta                   | Disponer de una interfaz gráfica que permita realizar las tareas de creación, configuración y despliegue de bots de Discord. |
-| Perfil de usuario      | Usuario administrador con conocimientos avanzados en:<br />- Configuración de Discord.<br />- Administración de sistemas.<br />- Despliegue de software y sistemas. |
+| Perfil de usuario      | [Administrador](#admin)                                      |
 | Escenario              | - Dado: que quiero administrar los bots de Discord,<br />- Cuando: accedo a la interfaz gráfica,<br />- Entonces: el sistema me permite realizar todas las tareas de administración de bots y comandos. |
 | Notas funcionales      | –                                                            |
 | Notas técnicas         | –                                                            |
