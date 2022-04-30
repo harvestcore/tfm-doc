@@ -12,3 +12,4 @@
 - [Next.js](https://nextjs.org/)
 - [.NET](https://docs.microsoft.com/es-es/dotnet/)
 - [Serilog](https://serilog.net/)
+- [22 Discord Bots That Will Keep Your Server Hopping](https://influencermarketinghub.com/discord-bots)

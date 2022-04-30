@@ -1,13 +1,27 @@
 # Introducción
 
-Discord es una herramienta de mensajería de uso tanto personal como en empresas. Además permite la integración de bots, los cuales pueden realizar casi cualquier tipo de función dentro (y fuera) de un servidor.
+[Discord]([https://discord.com) es una aplicación de mensajería de uso tanto personal como en empresas. Es semejante a otras herramientas que se usan en ámbitos similares, como [Slack](https://slack.com/), [Skype](https://www.skype.com/) o [TeamSpeak](https://www.teamspeak.com/), y ofrece distintos servicios de comunicación, tales como:
 
-Actualmente hay dos maneras de crear uno de estos bots, a bajo y alto nivel.
+- Mensajería instantánea.
+- Chat de voz.
+- Chat de vídeo.
+- Integración con videojuegos.
+- Integración con bots.
 
-- En el primer caso el bot se crea haciendo uso de las diferentes APIs que ofrece Discord para ello. En este caso la personalización es máxima, ya que lo que se crea está adaptado a las necesidades existentes. En cambio, es más tedioso, y requiere conocimientos extra que algunos usuarios pueden no tener. Además hay que tener en cuenta que el bot debe ser desplegado manualmente, por lo que requiere un esfuerzo extra.
-- En el segundo, el bot es creado usando algún tipo de sistema que permite configurar los comandos del mismo. En este caso el bot ya se encuentra desplegado, y los comandos son únicos para cada servidor. Aunque algunos de estos comandos son comunes para todos, los más específicos no se comparten entre servidores. Por otro lado, ya que están pensados para un público general, las posibilidades de configuración son escasas. Suelen tener algunas plantillas de comandos básicos, como temporizadores, respuestas automáticas o incluso música.
+Estos últimos puntos son bastante importantes, ya que la integración con videojuegos (junto con la comunidad a la que se dirige) ha hecho que Discord gane visibilidad en los últimos años; y la integración con bots ha hecho que Discord sea una herramienta mucho más interactiva que las otras mencionadas. Más información en el [estado del arte](../estado-del-arte/estado-del-arte.md).
 
-Usuarios más avanzados (por ejemplo, un administrador de sistemas, o alguien que controla distintos equipos) que quieren hacer uso de este tipo de tecnologías se ven obligados a crear distintos bots muy específicos y en ocasiones poco reutilizables. Si bien se podrían programar comandos más específicos, sería una tarea tediosa la reutilización entre diferentes proyectos.
+En concreto, este proyecto se centra en los bots, que podrían definirse como herramientas que, haciendo uso de diferentes permisos, ayudan a automatizar tareas dentro de un servidor de Discord. Las funciones de éstos son prácticamente ilimitadas, aunque las más populares son moderación de usuarios y mensajes, música (como reproductores interactivos), envío de contenido, noticias o encuestas.
+
+---
+
+Incidiendo en éste aspecto de forma más técnica, actualmente hay tres maneras de usar bots en Discord.
+
+- Usar bots ya existentes. En este caso el procedimiento es similar a Telegram u otras aplicaciones. El bot ya se encuentra creado, configurado y desplegado, y solo es necesario agregarlo al servidor para poder disfrutar de sus funcionalidades.
+
+- Crear un bot a alto nivel. Este caso es similar al anterior, ya que se trata de un bot genérico, que es configurable en cierta medida para cada servidor. Esta configuración se hace a través de algún tipo de herramienta (generalmente una aplicación web) que permite configurar los comandos deseados. Aunque algunos de los comandos de estos bots son comunes para todos los usuarios, los más específicos (creados por el administrador del bot) no se comparten entre servidores. Por otro lado, ya que están pensados para un público general, las posibilidades de configuración son escasas. Suelen tener algunas plantillas de comandos básicos, como temporizadores, respuestas automáticas o incluso música.
+- Crear un bot a bajo nivel. En este caso el bot se crea haciendo uso de las diferentes APIs que ofrece Discord para ello y la personalización es máxima. En cambio, es más tedioso, y requiere conocimientos extra que algunos usuarios pueden no tener (como programación). Además hay que tener en cuenta que el bot debe ser desplegado manualmente, por lo que requiere un esfuerzo extra.
+
+Usuarios más avanzados (por ejemplo, un administrador de sistemas, o alguien que controla distintos equipos) que quieren hacer uso de este tipo de tecnologías se ven obligados a crear distintos bots muy específicos y en ocasiones poco reutilizables. Si bien se podrían programar comandos más específicos en un único bot, sería una tarea tediosa la reutilización entre diferentes ámbitos.
 
 Además, en el caso de que se quisieran desplegar distintos bots al mismo tiempo y administrarlos desde un mismo entorno, no sería posible, ya que cada uno de estos es una instancia distinta.
 
