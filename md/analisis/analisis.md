@@ -76,6 +76,17 @@ En el sistema hay dos actores.
 | Frustraciones | No le gusta nada tener que indagar en detalles técnicos al jugar a videojuegos con sus amigos. Entiende que en ocasiones es necesaria alguna configuración para poder jugar (como acceder a un servidor), pero quiere que ese proceso sea lo más fácil posible. No le gusta tener que recordar esos detalles. |
 | Necesidades   | Una herramienta que le permita acceder a esos detalles sin preocuparse de recordarlos o de consultarlos de manera extraña. |
 
+<div id="tribunal" />
+
+| Nombre        | Blanca Casado                                                |
+| ------------- | ------------------------------------------------------------ |
+| Rol           | Miembro del tribunal                                         |
+| Descripción   | 52 años.<br />Su conocimiento en informática es muy elevado, pero no tiene tanta destreza con las distintas aplicaciones de mensajería instantánea que han surgido en los últimos años. |
+| Intereses     | Procesamiento en segundo plano.<br />Redes neuronales.<br />Desarrollo ágil. |
+| Formación     | Catedrática en informática.                                  |
+| Frustraciones | No le gusta enfrentarse a documentaciones poco precisas o de dudosa credibilidad. |
+| Necesidades   | Una documentación y una presentación acorde a los criterios de evaluación de TFM que le permita evaluar al estudiante. |
+
 ## Historias de usuario
 
 Para la creación de las historias de usuarios se ha usado la siguiente estructura.
@@ -291,3 +302,18 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 | Dependencias           | - HU-01<br />- HU-02<br />- HU-03<br />- HU-04<br />- HU-05<br />- HU-06<br />- HU-07<br />- HU-08<br />- HU-09<br />- HU-10<br />- HU-11 |
 | Tareas de seguimiento  | –                                                            |
 | Criterio de aceptación | - La interfaz permite realizar las tareas de gestión de bots y comandos.<br />- El usuario es avisado en caso de producirse algún error.<br />- Tests unitarios y integración son creados dentro de lo posible. |
+
+### 13 - Criterios de evaluación
+
+| Sección                | Contenido                                                    |
+| ---------------------- | ------------------------------------------------------------ |
+| Resumen                | Como miembro del tribunal, quisiera disponer de una documentación, una presentación y un informe acordes a los criterios de evaluación para comprobar que éstos se han cumplido correctamente. |
+| Meta                   | Disponer de una documentación que recoja claramente toda la información referente al desarrollo del TFM. |
+| Beneficio              | De este modo es más sencillo evaluar todo el trabajo que el alumno ha realizado para desarrollar el TFM. |
+| Perfil de usuario      | [Miembro del tribunal](#tribunal)                            |
+| Escenario              | - Dado: que quiero evaluar el trabajo realizado por el alumno,<br />- Cuando: éste me de acceso a dicha documentación acorde a los criterios de evaluación,<br />- Entonces: podré evaluar el trabajo del alumno. |
+| Notas funcionales      | Los criterios de evaluación son:<br /><br />El estudiante…<br />- Utiliza fuentes de información variadas, válidas y fiables y selecciona la relevante para el objetivo del trabajo.<br />- Toma decisiones adecuadas al contexto y propone soluciones utilizando el conocimiento adquirido.<br />- Detecta y analiza oportunidades para hacer nuevas propuestas.<br />- Propone soluciones adecuadas y justifica las decisiones tomadas para resolver problemas complejos.<br />- Utiliza recursos formales e informales para documentar adecuadamente el proceso de desarrollo: concepción, planificación, análisis, diseño, implementación, pruebas, etc.<br />- Muestra claridad y comprensión en la redacción,organizando la información adecuadamente y utilizando los recursos adecuados para el discurso escrito. Muestra claridad y comprensión en la expresión oral, organizando la información adecuadamente y utilizando los recursos adecuados para el discurso oral. |
+| Notas técnicas         | –                                                            |
+| Dependencias           | –                                                            |
+| Tareas de seguimiento  | –                                                            |
+| Criterio de aceptación | - La documentación cumple con los criterios de evaluación.   |
