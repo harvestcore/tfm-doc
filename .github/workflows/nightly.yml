@@ -40,8 +40,6 @@ jobs:
 
     - name: Commit change and push
       run: |
-        git config --global user.name "Ángel Gómez"
-        git config --global user.name "aagomezies@gmail.com"
         git add README.md
         git commit -m "Nightly build"
         git push origin develop
