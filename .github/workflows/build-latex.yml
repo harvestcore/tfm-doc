@@ -1,5 +1,8 @@
 name: Build LaTeX project
-on: [push]
+on: 
+  push:
+    paths-ignore:
+      - '**/README.md'
 
 jobs:
   build-resume:

@@ -1,0 +1,48 @@
+name: Nightly
+#on:
+#  schedule:
+#    - cron: '0 3 * * *'
+
+on: [push]
+
+jobs:
+  build-resume:
+    runs-on: ubuntu-latest
+    name: Build the nightly documentation
+
+    container:
+      image: danteev/texlive:latest
+
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v2
+      with:
+        ref: develop
+
+    - name: Build project
+      working-directory: ./tex
+      run: make doc
+
+    - name: Set date
+      run: echo "datetime=$(date +"%Y%m%d-%H%M%S")" >> $GITHUB_ENV
+
+    - name: Upload project artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: nightly_${{ env.datetime }}
+        path: ./tex/proyecto.pdf
+
+    - name: Generate link
+      run: echo "nightly=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_ENV
+
+    - name: Update README
+      run: sed -i '/Nightly/c\| Nightly | ${{ env.nightly }} |' README.md
+
+    - name: Commit change and push
+      run: |
+        git config --global user.name "Ángel Gómez"
+        git config --global user.name "aagomezies@gmail.com"
+        git remote add origin https://${{ github.token }}@github.com/${{ github.repository }}.git
+        git add README.md
+        git commit -m "Nightly build"
+        git push origin develop
