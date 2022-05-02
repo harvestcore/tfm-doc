@@ -3,7 +3,7 @@ on:
   push:
     paths-ignore:
       - '**/README.md'
-      - '**/nigthly.yml'
+      - '**/nightly.yml'
 
 jobs:
   build-resume:
