@@ -1,13 +1,10 @@
-name: Build LaTeX project
+name: Spellcheck and build LaTeX project
 on: [push]
 
 jobs:
-  build-resume:
+  spellcheck:
     runs-on: ubuntu-latest
-    name: Build project and push artifact
-
-    container:
-      image: danteev/texlive:latest
+    name: Spellchecking
 
     steps:
     - name: Checkout branch
@@ -21,6 +18,17 @@ jobs:
       run: |
         make spellrights
         make spell
+
+  build:
+    runs-on: ubuntu-latest
+    name: Build project and push artifact
+
+    container:
+      image: danteev/texlive:latest
+
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v2
 
     - name: Build project
       working-directory: ./tex
