@@ -12,7 +12,7 @@ all: proyecto.pdf
 spellrights:
 	chmod +x ./check-spelling.sh 
 
-spell: spellrights
+spell:
 	./check-spelling.sh
 
 clean:
