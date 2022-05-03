@@ -1,9 +1,5 @@
 name: Build LaTeX project
-on: 
-  push:
-    paths-ignore:
-      - '**/README.md'
-      - '**/nightly.yml'
+on: [push]
 
 jobs:
   build-resume:
@@ -16,6 +12,15 @@ jobs:
     steps:
     - name: Checkout branch
       uses: actions/checkout@v2
+
+    - name: Install aspell
+      run: sudo apt install aspell aspell-es aspell-en
+
+    - name: Check spelling
+      working-directory: ./tex
+      run: |
+        make spellrights
+        make spell
 
     - name: Build project
       working-directory: ./tex
