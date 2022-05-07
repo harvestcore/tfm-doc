@@ -116,10 +116,11 @@ Por otro lado, se han creado las siguientes historias de usuario. Estas se encue
 6. [Consultar datos de un comando](https://github.com/harvestcore/matroos/issues/6)
 7. [Editar un comando](https://github.com/harvestcore/matroos/issues/7)
 8. [Eliminar un comando](https://github.com/harvestcore/matroos/issues/8)
-9. [Lanzar bots de Discord](https://github.com/harvestcore/matroos/issues/9)
+9. [Lanzar bots](https://github.com/harvestcore/matroos/issues/9)
 10. [Cancelar ejecución de bots](https://github.com/harvestcore/matroos/issues/10)
 11. [Consultar estado de los despliegues](https://github.com/harvestcore/matroos/issues/11)
 12. [Interfaz de usuario](https://github.com/harvestcore/matroos/issues/25)
+13. Criterios de evaluación
 
 ---
 
