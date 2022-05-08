@@ -52,9 +52,11 @@ Define las características básicas de un tipo de comando. Estas son:
 
 ### ParameterSignature
 
-- `DisplayName: string` Nombre del parámetro.
+- `Name: string` Nombre del parámetro.
+- `DisplayName: string` Nombre (de visualización) del parámetro.
 - `Required: boolean` Si el parámetro es requerido o no.
 - `Type: DataType` El tipo de dato del parámetro.
+- `Default: object` El valor por defecto.
 
 ### DataType
 
