@@ -14,7 +14,6 @@ Parámetros:
 - `Type: CommandType` Tipo de comando.
 - `Trigger: string` Activador del comando. Cadena que se escribe tras el prefijo para invocar este comando.
 - `Mode: CommandMode` Modo de ejecución del comando.
-- `Alias: string` Nombre interno del comando.
 - `Parameters: Dictionary<string, object>` Parámetros del comando.
 - *`CreatedAt: DateTime` Fecha y hora de creación del comando.
 - *`UpdatedAt: DateTime` Fecha y hora de actualización del comando.
@@ -26,7 +25,7 @@ Parámetros:
 Modos de ejecución de comandos. No todos los comandos se pueden (o deben) ejecutar de todos los modos distintos.
 
 - `INLINE` Los parámetros del comando se introducen al ejecutar el comando.
-- `SCOPED` Los parámetros del comando se introducen al crear el comando. El comando se ejecutará haciendo uso del trigger del comando y del alias de la variante.
+- `SCOPED` Los parámetros del comando se introducen al crear el comando. El comando se ejecutará haciendo uso del trigger del comando.
 - `HEADLESS` Los parámetros del comando se introducen al crear el comando. El comando no se puede ejecutar manualmente.
 - `SINGLE` El comando no necesita parámetros.
 
@@ -37,6 +36,7 @@ Tipos de comandos que se pueden crear. Esta lista es extensible.
 - `MESSAGE`
 - `PING`
 - `STATUS`
+- `VERSION`
 - `TIMER`
 
 ## BaseCommand
@@ -80,6 +80,7 @@ Parámetros:
 | Message     | string  |         | Mensaje a enviar.                                            |
 | ChannelID?  | string  | ""      | Canal donde enviar el mensaje. Opcional, si no se indica se manda en el canal actual. |
 | IsResponse? | boolean | false   | Si el mensaje se debe enviar como una respuesta al comando.  |
+| IsTTS? | boolean | false   | Si el mensaje se debe enviar como TTS (*Text to speach*)  |
 
 ```json
 {
@@ -112,9 +113,10 @@ Hace una petición `ping` a un host.
 
 Parámetros:
 
-| Parámetro | Tipo   | Definición                 |
-| --------- | ------ | -------------------------- |
-| Host      | string | Host al que hacer el ping. |
+| Parámetro | Tipo   | Default | Definición                 |
+| --------- | ------ | ------- | -------------------------- |
+| Host      | string |         | Host al que hacer el ping. |
+| ChannelID?  | string  | ""      | Canal donde enviar el mensaje. Opcional, si no se indica se manda en el canal actual. |
 
 ```json
 {
@@ -133,12 +135,39 @@ Parámetros:
 
 ### StatusCommand : BaseCommand (`CommandType.STATUS`)
 
-Devuelve el estado del bot. No necesita parámetros.
+Devuelve el estado del bot.
+
+Parámetros:
+
+| Parámetro | Tipo   | Default | Definición                 |
+| --------- | ------ | ------- | -------------------------- |
+| ChannelID?  | string  | ""      | Canal donde enviar el mensaje. Opcional, si no se indica se manda en el canal actual. |
+
+```json
+{
+    "AllowedModes": [CommandMode.SCOPED],
+    "CommandType": CommandType.STATUS,
+    "NeedsPrefix": true,
+    "ParametersSignature": {
+        "ChannelID": {
+            "DisplayName": "Channel",
+            "Required": false,
+            "Type": DataType.STRING
+        }
+    }
+}
+```
+
+### VersionCommand : BaseCommand (`CommandType.VERSION`)
+
+Devuelve la versión actual del bot.
+
+No necesita parámetros.
 
 ```json
 {
     "AllowedModes": [CommandMode.SINGLE],
-    "CommandType": CommandType.STATUS,
+    "CommandType": CommandType.VERSION,
     "NeedsPrefix": true,
     "ParametersSignature": {}
 }
@@ -150,10 +179,11 @@ Ejecuta un comando cada vez que se cumple el intervalo de tiempo.
 
 Parámetros:
 
-| Parámetro | Tipo          | Definición                                           |
-| --------- | ------------- | ---------------------------------------------------- |
-| Interval  | string (Cron) | Cron que indique cuando se debe ejecutar el comando. |
-| CommandID | GUID          | Comando a ejecutar. Debe ser de tipo SCOPED.         |
+| Parámetro | Tipo          | Default | Definición                                           |
+| --------- | ------------- | ------- | ---------------------------------------------------- |
+| Interval  | string (Cron) |         | Cron que indique cuando se debe ejecutar el comando. |
+| CommandID | GUID          |         | Comando a ejecutar. Debe ser de tipo SCOPED.         |
+| Active    | boolean       |         | Si el *timer* está activo o no.                      |
 
 ```json
 {
@@ -170,6 +200,11 @@ Parámetros:
             "DisplayName": "Command",
             "Required": true,
             "Type": DataType.STRING
+        },
+        "Active": {
+            "DisplayName": "Active",
+            "Required": true,
+            "Type": DataType.BOOLEAN
         }
     }
 }
@@ -189,7 +224,6 @@ Parámetros:
     "Description": "Pings a site and returns the response.",
     "Type": CommandType.PING,
     "Trigger": "ping",
-    "Alias": "",
     "Mode": CommandMode.INLINE,
     "Parameters": {},
     "CreatedAt": "01/01/2020",
@@ -205,7 +239,6 @@ Parámetros:
     "Description": "Pings my-site.com and returns the response.",    
     "Type": CommandType.PING,
     "Trigger": "ping",
-    "Alias": "my-site",
     "Mode": CommandMode.SCOPED,
     "Parameters": {
         "Host": "my-site.com"
@@ -217,26 +250,26 @@ Parámetros:
 // MESSAGE
 // Comando SCOPED, los parámetros se especifican al crear el comando. No necesita argumentos al invocar el comando.
 // -> !message
-// -> Hola!
+// -> (TTS) Hola!
 {
     "Id": "message-command-id",
     "Name": "Send message",
     "Description": "Sends a message.",
     "Type": CommandType.MESSAGE,
     "Trigger": "message",
-    "Alias": null,
     "Mode": CommandMode.SCOPED,
     "Parameters": {
         "Message": "Hola!",
         "IsResponse": false,
-        "ChannelId": null
+        "ChannelId": null,
+        "IsTTS": true
     },
     "CreatedAt": "01/01/2020",
     "UpdatedAt": "01/01/2020"
 }
 
 // STATUS
-// Comando SINGLE, no necesita parámetros.
+// Comando SCOPED, los parámetros se especifican al crear el comando. No necesita argumentos al invocar el comando.
 // -> !status
 // -> Bot name: Test Bot - Uptime: 10h
 {
@@ -245,9 +278,10 @@ Parámetros:
     "Description": "Sends the bot status.",
     "Type": CommandType.STATUS,
     "Trigger": "status",
-    "Alias": null,
-    "Mode": CommandMode.SINGLE,
-    "Parameters": {},
+    "Mode": CommandMode.SCOPED,
+    "Parameters": {
+        "ChannelId": null
+    },
     "CreatedAt": "01/01/2020",
     "UpdatedAt": "01/01/2020"
 }
@@ -262,13 +296,30 @@ Parámetros:
     "Description": "Sends the Greeting message every 10 minutes.",
     "Type": CommandType.TIMER,
     "Trigger": null,
-    "Alias": null,
     "Mode": CommandMode.HEADLESS,
     "Parameters": {
-        "Interval": "*/10 * * * *",
-        "CommandId": "message-command-id"
+        "Interval": "* */10 * * * ?",
+        "CommandId": "message-command-id",
+        "Active": true
     },
     "CreatedAt": "01/01/2020",
     "UpdatedAt": "01/01/2020"
 }
+
+// VERSION
+// Comando SINGLE, no necesita parámetros.
+// -> !version
+// -> Using version 3.1.5
+{
+    "Id": "3F2504E0-4F89-11D3-9A0C-0305E82C3301",
+    "Name": "Version",
+    "Description": "Sends the bot version",
+    "Type": CommandType.VERSION,
+    "Trigger": "version",
+    "Mode": CommandMode.SINGLE,
+    "Parameters": {},
+    "CreatedAt": "01/01/2020",
+    "UpdatedAt": "01/01/2020"
+}
+
 ```
