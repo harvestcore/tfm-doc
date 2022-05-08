@@ -4,7 +4,7 @@ Un *minimum viable product*, o MVP, es un producto con las suficientes caracter�
 
 Para la realización de este proyecto se ha propuesto la creación de los siguientes MPVs (o *milestones*, como se llaman en [GitHub](https://github.com/harvestcore/matroos/milestones)).
 
-Los milestones 0 a 6 son los principales del proyecto, y son los que se planea inicialmente realizar. Los milestones 7 y 8 son adicionales, y completarían el desarrollo de todo el software incluyendo funcionalidad y características extra.
+Los milestones 0 a 6 son los principales del proyecto, y son los que se planea inicialmente realizar. Los milestones 8 y 9 son adicionales, y completarían el desarrollo de todo el software incluyendo funcionalidad y características extra.
 
 ## Milestones principales
 
