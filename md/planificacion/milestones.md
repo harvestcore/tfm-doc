@@ -25,7 +25,7 @@ Decisiones técnicas y documentación adicional:
 - [Integración continua](../analisis/herramientas.md#integración-continua-ci)
 - [Arquitectura](../analisis/arquitectura.md)
 
-### 01 - Modelado de datos y lógica de negocio
+### 01 - Modelado del dominio del problema y lógica de negocio
 
 **Versión objetivo:** 0.0.2
 
