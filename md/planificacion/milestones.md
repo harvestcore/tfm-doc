@@ -4,147 +4,169 @@ Un *minimum viable product*, o MVP, es un producto con las suficientes caracter�
 
 Para la realización de este proyecto se ha propuesto la creación de los siguientes MPVs (o *milestones*, como se llaman en [GitHub](https://github.com/harvestcore/matroos/milestones)).
 
-## [00 - Configuración del entorno, tests y CI](https://github.com/harvestcore/matroos/milestone/3)
+Los milestones 0 a 6 son los principales del proyecto, y son los que se planea inicialmente realizar. Los milestones 8 y 9 son adicionales, y completarían el desarrollo de todo el software incluyendo funcionalidad y características extra.
+
+## Milestones principales
+
+### [00 - Configuración del entorno, tests y CI](https://github.com/harvestcore/matroos/milestone/3)
 
 **Versión objetivo:** 0.0.1
 
-Este *milestone* establece la estructura del repositorio que se va a utilizar, los proyectos iniciales necesarios y la configuración de la integración continua.
+Tras la finalización de este *milestone*:
 
-Funcionalidad que debe incluir:
+- La estructura del repositorio está definida e implementada.
+- Los proyectos necesarios están creados y listos para continuar con el desarrollo de nuevas funcionalidades.
+- CI está listo para ejecutar los diferentes tests y pruebas implementadas en los distintos proyectos.
+- La documentación hasta este punto del desarrollo está actualizada y disponible.
 
-- Proyectos preparados para el desarrollo de las siguientes funcionalidades.
-- Configuración de CI.
+Decisiones técnicas y documentación adicional:
 
-Decisiones técnicas:
+- [Lenguaje de programación y framework](../analisis/herramientas.md#lenguaje-de-programación)
+- [Integración continua](../analisis/herramientas.md#integración-continua-ci)
+- [Arquitectura](../analisis/arquitectura.md)
+
+### 01 - Modelado de datos y lógica de negocio
+
+**Versión objetivo:** 0.0.2
+
+Tras la finalización de este *milestone*:
+
+- El dominio del problema está modelado.
+- La lógica de negocio en su forma más básica está definida.
+- La documentación hasta este punto del desarrollo está actualizada y disponible.
+
+Decisiones técnicas y documentación adicional:
+
+- [Arquitectura](../analisis/arquitectura.md)
+- [Comandos](../diseño/comandos.md)
+- [Bots](../diseño/bots.md)
+- [Herramientas](../analisis/herramientas.md)
+
+### [02 - Gestión de comandos](https://github.com/harvestcore/matroos/milestone/10)
+
+**Versión objetivo:** 0.0.3
+
+Tras la finalización de este *milestone*:
+
+- La estructura de los comandos está definida.
+- El [`backend`](https://github.com/harvestcore/matroos/tree/develop/backend) cuenta con un servicio capaz de gestionar los comandos y su configuración.
+- Los cuatro tipos de comandos básicos quedan definidos y se pueden crear nuevos comandos de estos tipos.
+- La documentación hasta este punto del desarrollo está actualizada y disponible.
+
+Decisiones técnicas y documentación adicional:
+
+- [Arquitectura](../analisis/arquitectura.md)
+- [Comandos](../diseño/comandos.md)
+
+### [03 - Gestión de bots](https://github.com/harvestcore/matroos/milestone/6)
+
+**Versión objetivo:** 0.0.4
+
+Tras la finalización de este *milestone*:
+
+- La estructura de los bots está definida.
+- El [`backend`](https://github.com/harvestcore/matroos/tree/develop/backend) cuenta con un servicio capaz de gestionar los bots y su configuración.
+- Es posible asociar comandos a bots.
+- La documentación hasta este punto del desarrollo está actualizada y disponible.
+
+Decisiones técnicas y documentación adicional:
+
+- [Arquitectura](../analisis/arquitectura.md)
+- [Bots](../diseño/bots.md)
+
+### [04 - Despliegue de bots en workers](https://github.com/harvestcore/matroos/milestone/5)
+
+**Versión objetivo:** 0.0.5
+
+Tras la finalización de este *milestone*:
+
+- Es posible desplegar (ejecutar) bots en los workers.
+- El backend es capaz de comunicarse con los distintos workers.
+- La documentación hasta este punto del desarrollo está actualizada y disponible.
+
+Decisiones técnicas y documentación adicional:
 
 - [Lenguaje de programación y framework](../analisis/herramientas.md#lenguaje-de-programación)
 - [Arquitectura](../analisis/arquitectura.md)
 
-## [01 - Almacén de datos](https://github.com/harvestcore/matroos/milestone/11)
+### [05 - API REST](https://github.com/harvestcore/matroos/milestone/7)
 
-**Versión objetivo:** 0.0.2
+**Versión objetivo:** 0.1.0
 
-Este *milestone* incluye la integración del componente principal del software ([`backend`](https://github.com/harvestcore/matroos/tree/develop/backend)) con base de datos (MongoDB) mediante la implementación de un servicio, de forma que es posible almacenar fácilmente todos los datos necesarios.
+Tras la finalización de este *milestone*:
 
-Funcionalidad que incluye:
+- La `API Rest` está definida y los *endpoints* están documentados.
+- Es posible realizar las tareas de administración de bots y comandos haciendo uso de la API.
+- La documentación hasta este punto del desarrollo está actualizada y disponible.
 
-- Integración de la base de datos con el [`backend`](https://github.com/harvestcore/matroos/tree/develop/backend).
+Decisiones técnicas y documentación adicional:
 
-Decisiones técnicas:
+- [Lenguaje de programación y framework](../analisis/herramientas.md#lenguaje-de-programación)
+- [Arquitectura](../analisis/arquitectura.md)
+
+### [06 - Despliegue en contenedores Docker](https://github.com/harvestcore/matroos/milestone/2)
+
+**Versión objetivo:** 0.2.0
+
+Tras la finalización de este *milestone*:
+
+- El software es distribuible mediante contenedores Docker.
+- El archivo *Dockerfile* para el microservicio del *backend* está disponible.
+- El archivo *Dockerfile* para el microservicio del *worker* está disponible.
+- El archivo *Docker Compose* para orquestar los microservicios está disponible.
+- La documentación hasta este punto del desarrollo está actualizada y disponible.
+
+Decisiones técnicas y documentación adicional:
+
+- [Despliegue en contenedores](../analisis/herramientas.md#despliegue-en-contenedores)
+- [Arquitectura](../analisis/arquitectura.md)
+
+### [07 - Almacén de datos](https://github.com/harvestcore/matroos/milestone/11)
+
+**Versión objetivo:** 0.3.0
+
+Tras la finalización de este *milestone*:
+
+- Tanto los bots como los comandos son almacenables en base de datos (MongoDB).
+- La documentación hasta este punto del desarrollo está actualizada y disponible.
+
+Decisiones técnicas y documentación adicional:
 
 - [Herramientas (BD)](../analisis/herramientas.md#base-de-datos)
 - [Arquitectura](../analisis/arquitectura.md)
 - [Base de datos](../diseño/base-datos.md)
 
-## [02 - Gestión de bots](https://github.com/harvestcore/matroos/milestone/6)
+---
 
-**Versión objetivo:** 0.0.3
+## Milestones adicionales
 
-Este *milestone* incluye la posibilidad de creación configuración de bots. Amplía la funcionalidad del proyecto de recursos compartidos ([`resources`](https://github.com/harvestcore/matroos/tree/develop/resources)) y el proyecto principal ([`backend`](https://github.com/harvestcore/matroos/tree/develop/backend)), el cual implementa el módulo que gestiona estas operaciones.
+### [08 - Interfaz de usuario](https://github.com/harvestcore/matroos/milestone/9)
 
-Funcionalidad que incluye:
+**Versión objetivo:** 0.4.0
 
-- Creación y configuración de bots.
+Tras la finalización de este *milestone*:
 
-Decisiones técnicas:
+- La interfaz de usuario está disponible y es capaz de realizar las tareas de creación y configuración de comandos y bots, además del despliegue de éstos en workers.
+- La interfaz de usuario es distribuible mediante contenedores Docker.
+- El archivo Dockerfile para el microservicio está disponible.
+- La documentación hasta este punto del desarrollo está actualizada y disponible.
 
-- [Arquitectura](../analisis/arquitectura.md)
-- [Base de datos](../diseño/base-datos.md)
-
-## [03 - Gestión de comandos](https://github.com/harvestcore/matroos/milestone/10)
-
-**Versión objetivo:** 0.0.4
-
-Este *milestone* incluye la posibilidad de creación y configuración de comandos, los cuales podrán ser configurados en bots para después ser utilizados en los servidores de Discord. Amplía la funcionalidad del proyecto de recursos compartidos ([`resources`](https://github.com/harvestcore/matroos/tree/develop/resources)) y el proyecto principal ([`backend`](https://github.com/harvestcore/matroos/tree/develop/backend)), el cual implementa el servicio que gestiona estas operaciones.
-
-Tras la finalización de este *milestone* la creación y configuración de bots mediante código será posible. Esto significa que un usuario con conocimientos más avanzados en el desarrollo de aplicaciones será capaz de crear bots y comandos de Discord, y además podrá realizar la configuración de ambos.
-
-Funcionalidad que incluye:
-
-- Creación y configuración de comandos.
-
-Decisiones técnicas:
-
-- [Arquitectura](../analisis/arquitectura.md)
-- [Base de datos](../diseño/base-datos.md)
-- [Comandos](../diseño/comandos.md)
-
-## [04 - Despliegue de bots en workers](https://github.com/harvestcore/matroos/milestone/5)
-
-**Versión objetivo:** 0.0.5
-
-Este *milestone* habilita el despliegue (la ejecución) de los bots en los workers. Tras la finalización de este milestone, un usuario con conocimientos más avanzados en el desarrollo de aplicaciones será capaz de desplegar bots que podrán ser usados en servidores de Discord.
-
-Funcionalidad que incluye:
-
-- Comunicación entre el núcleo principal y los workers.
-- Despliegue de los bots en los workers.
-
-Decisiones técnicas:
-
-- [Lenguaje de programación y framework](../analisis/herramientas.md#lenguaje-de-programación)
-- [Arquitectura](../analisis/arquitectura.md)
-
-## [05 - API REST](https://github.com/harvestcore/matroos/milestone/7)
-
-**Versión objetivo:** 0.1.0
-
-Este *milestone* define e implementa la API REST que permita realizar todas las funcionalidades implementadas en *milestones* anteriores (creación, configuración y despliegue de bots). Una vez finalizado este *milestone* el software será capaz de responder a las diferentes peticiones que se le hagan mediante la API REST.
-
-Funcionalidad que incluye:
-
-- Endpoints de la API REST.
-
-Decisiones técnicas:
-
-- [Lenguaje de programación y framework](../analisis/herramientas.md#lenguaje-de-programación)
-- [Arquitectura](../analisis/arquitectura.md)
-
-## [06 - Despliegue en contenedores Docker](https://github.com/harvestcore/matroos/milestone/2)
-
-**Versión objetivo:** 0.2.0
-
-Este *milestone* incluye la distribución del software mediante contenedores Docker.
-
-Funcionalidad que incluye:
-
-- Archivo *Dockerfile* para el microservicio del *backend*.
-- Archivo *Dockerfile* para el microservicio del *worker*.
-- Archivo *Docker Compose* para orquestar los microservicios.
-
-Decisiones técnicas:
-
-- [Despliegue en contenedores](../analisis/herramientas.md#despliegue-en-contenedores)
-- [Arquitectura](../analisis/arquitectura.md)
-
-## [07 - Interfaz de usuario](https://github.com/harvestcore/matroos/milestone/9)
-
-**Versión objetivo:** 0.3.0
-
-Este *milestone* integra una interfaz de usuario, la cual es capaz de realizar las tareas de creación y configuración de comandos y bots, además del despliegue de estos en los diferentes workers.
-
-La interfaz de usuario no es un componente imprescindible para el funcionamiento del sistema en su conjunto, por lo que en caso de que no se contase con el tiempo necesario para su desarrollo, este podría posponerse (pasando entonces al *milestone* siguiente).
-
-Funcionalidad que incluye:
-
-- Interfaz de usuario.
-- Archivo Dockerfile para el microservicio.
-
-Decisiones técnicas:
+Decisiones técnicas y documentación adicional:
 
 - [Frontend](../analisis/herramientas.md#frontend)
 - [Arquitectura](../analisis/arquitectura.md)
 
-## [08 - Despliegue cloud](https://github.com/harvestcore/matroos/milestone/4)
+### [09 - Despliegue cloud](https://github.com/harvestcore/matroos/milestone/4)
 
-**Versión objetivo:** 0.4.0
+**Versión objetivo:** 0.5.0
 
-El milestone incluye la configuración necesaria para el despliegue de la arquitectura de microservicios de Matroos en una plataforma Cloud.
+Tras la finalización de este *milestone*:
 
-Funcionalidad que incluye:
+- El software compuesto por los distintos microservicios es desplegable en un servicio cloud.
+- Los archivos de configuración necesarios están disponibles.
+- La documentación hasta este punto del desarrollo está actualizada y disponible.
 
-- Microservicios desplegados y configurados en la plataforma Cloud elegida.
-
-Decisiones técnicas:
+Decisiones técnicas y documentación adicional:
 
 - [Arquitectura](../analisis/arquitectura.md)
+- Servicio cloud aún por determinar.
