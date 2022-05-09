@@ -2,6 +2,7 @@
 
 ## Aplicaciones similares
 
+- [Mattermost](https://mattermost.com/)
 - [Slack](https://slack.com/)
 - [Skype](https://www.skype.com/)
 - [TeamSpeak](https://www.teamspeak.com/)
@@ -45,7 +46,7 @@ Por lo general los bots son de moderación.
 - Los bots son independientes unos de otros.
 - La personalización extra y la posibilidad de crear varios bots requiere de premium.
 
-  ---
+---
 
 ## Otros bots
 
